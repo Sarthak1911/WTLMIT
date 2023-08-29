@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter the first number
+        var num1 = parseFloat(prompt("Enter the first number:"));
+
+        // Check if the input is a valid number
+        if (isNaN(num1)) {
+            document.write("Invalid input for the first number.");
+        } else {
+            // Prompt the user to enter the second number
+            var num2 = parseFloat(prompt("Enter the second number:"));
+
+            // Check if the input is a valid number
+            if (isNaN(num2)) {
+                document.write("Invalid input for the second number.");
+            } else {
+                // Perform arithmetic operations
+                var sum = num1 + num2;
+                var difference = num1 - num2;
+                var product = num1 * num2;
+                var quotient = num1 / num2;
+
+                // Display the results on the screen
+                document.write("<h2>Results:</h2>");
+                document.write("Sum: " + num1 + " + " + num2 + " = " + sum + "<br>");
+                document.write("Difference: " + num1 + " - " + num2 + " = " + difference + "<br>");
+                document.write("Product: " + num1 + " * " + num2 + " = " + product + "<br>");
+                document.write("Quotient: " + num1 + " / " + num2 + " = " + quotient + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>

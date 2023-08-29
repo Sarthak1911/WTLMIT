@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum and Average of Integers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter a number
+        var userInput = parseInt(prompt("Enter a positive integer:"));
+
+        // Check if the input is a valid positive integer
+        if (isNaN(userInput) || userInput < 0) {
+            document.write("<p>Invalid input. Please enter a valid positive integer.</p>");
+        } else {
+            // Initialize variables for the sum, addition process string, and average
+            var sum = 0;
+            var additionProcess = "";
+            var average;
+
+            // Calculate the sum of integers from 0 to userInput and build the addition process string
+            for (var i = 0; i <= userInput; i++) {
+                sum += i;
+                additionProcess += i;
+                if (i < userInput) {
+                    additionProcess += " + ";
+                }
+            }
+
+            // Calculate the average
+            average = sum / (userInput + 1);
+
+            // Display the addition process, sum, and average
+            document.write("<p>Addition process for integers from 0 to " + userInput + ":</p>");
+            document.write("<h2>" + additionProcess + " = " + sum + "</h2>");
+            document.write("<p>Average: " + sum + " / (" + (userInput + 1) + ") = " + average.toFixed(2) + "</p>");
+        }
+    </script>
+</body>
+</html>
+

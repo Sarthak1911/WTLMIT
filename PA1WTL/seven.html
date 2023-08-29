@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest of Three Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter three numbers
+        var num1 = parseFloat(prompt("Enter the first number:"));
+        var num2 = parseFloat(prompt("Enter the second number:"));
+        var num3 = parseFloat(prompt("Enter the third number:"));
+
+        // Check if the inputs are valid numbers
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+            document.write("Invalid input. Please enter valid numbers.");
+        } else {
+            // Determine the largest number
+            var largest;
+
+            if (num1 >= num2 && num1 >= num3) {
+                largest = num1;
+            } else if (num2 >= num1 && num2 >= num3) {
+                largest = num2;
+            } else {
+                largest = num3;
+            }
+
+            // Display the input numbers and the result
+            document.write("<p>Numbers entered: " + num1 + ", " + num2 + ", " + num3 + "</p>");
+            document.write("<h2>The largest number is: " + largest + "</h2>");
+        }
+    </script>
+</body>
+</html>
+

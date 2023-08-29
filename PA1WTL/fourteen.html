@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        button {
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeBgButton">Change Background</button>
+
+    <script>
+        // Array of background images
+        const images = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image5.jpg',
+            'image6.jpg',
+            'image7.jpg',
+            'image8.jpg',
+            'image4.jpg',
+            // Add more image URLs here
+        ];
+
+        const body = document.body;
+        const button = document.getElementById('changeBgButton');
+        let currentImageIndex = 0;
+
+        // Function to change the background image
+        function changeBackgroundImage() {
+            body.style.backgroundImage = `url(${images[currentImageIndex]})`;
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        // Attach a click event listener to the button
+        button.addEventListener('click', changeBackgroundImage);
+
+        // Set the initial background image
+        changeBackgroundImage();
+    </script>
+</body>
+</html>
+

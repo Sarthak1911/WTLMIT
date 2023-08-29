@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        input {
+            font-size: 18px;
+            padding: 5px;
+            margin-right: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Triangle Area Calculator</h2>
+    
+    <label for="sideA">Enter side A:</label>
+    <input type="number" id="sideA" value="5">
+    <br>
+    
+    <label for="sideB">Enter side B:</label>
+    <input type="number" id="sideB" value="6">
+    <br>
+    
+    <label for="sideC">Enter side C:</label>
+    <input type="number" id="sideC" value="7">
+    <br>
+    
+    <button onclick="calculateArea()">Calculate Area</button>
+    
+    <div id="result"></div>
+
+    <script>
+        function calculateArea() {
+            // Side lengths of the triangle
+            var a = parseFloat(document.getElementById("sideA").value);
+            var b = parseFloat(document.getElementById("sideB").value);
+            var c = parseFloat(document.getElementById("sideC").value);
+
+            // Check if the input values form a valid triangle
+            if (a + b > c && a + c > b && b + c > a) {
+                // Calculate the semi-perimeter (s)
+                var s = (a + b + c) / 2;
+
+                // Calculate the area using Heron's formula
+                var area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+                // Display the result
+                document.getElementById("result").textContent = "Area: " + area.toFixed(2) + " square units";
+            } else {
+                // If the input values do not form a valid triangle
+                document.getElementById("result").textContent = "Invalid input. Not a triangle.";
+            }
+        }
+    </script>
+</body>
+</html>
+

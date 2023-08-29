@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Center the button in the middle of the page */
+        body {
+            display: flex;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Define styles for the button */
+        .color-button {
+            width: 400px;
+            color: rgb(255, 255, 255);
+            height: 100px;
+            font-size: 40px; /* Increase font size */
+            font-weight: 700;
+            font-family: Arial, sans-serif; /* Change font */
+            padding: 20px; /* Enhance padding */
+            background-color: red; /* Initial background color */
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<button class="color-button" onmouseover="changeColor()" onmouseout="resetColor()">Hover Me</button>
+
+<script>
+    const button = document.querySelector('.color-button');
+    const colors = ["green", "blue", "orange", "purple"];
+    let colorIndex = 0;
+
+    function changeColor() {
+        button.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+    }
+
+    function resetColor() {
+        button.style.backgroundColor = "red"; // Reset to the initial color
+    }
+</script>
+
+</body>
+</html>
+

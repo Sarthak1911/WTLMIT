@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fahrenheit to Celsius Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter the temperature in Fahrenheit
+        var fahrenheit = parseFloat(prompt("Enter the temperature in Fahrenheit:"));
+
+        // Check if the input is a valid number
+        if (isNaN(fahrenheit)) {
+            document.write("<p>Invalid input. Please enter a valid number for temperature.</p>");
+        } else {
+            // Convert Fahrenheit to Celsius
+            var celsius = (fahrenheit - 32) * 5/9;
+
+            // Display the entered value and the result in Celsius with larger font size
+            document.write("<p>Temperature entered in Fahrenheit: " + fahrenheit + "°F</p>");
+            document.write("<h2>Temperature in Celsius: " + celsius.toFixed(2) + "°C</h2>");
+        }
+    </script>
+</body>
+</html>

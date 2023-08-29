@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #colorList {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #colorList li {
+            margin: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click on an item from the list to change the background color:</h1>
+    <ul id="colorList">
+        <li onclick="changeBackgroundColor('red')">Red</li>
+        <li onclick="changeBackgroundColor('blue')">Blue</li>
+        <li onclick="changeBackgroundColor('green')">Green</li>
+        <li onclick="changeBackgroundColor('yellow')">Yellow</li>
+    </ul>
+
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

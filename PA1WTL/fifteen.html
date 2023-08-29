@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Array</title>
+</head>
+<body>
+    <h1>Color Array</h1>
+    <p>Current Colors: <span id="colorList"></span></p>
+    
+    <label for="colorInput">Enter a color:</label>
+    <input type="text" id="colorInput">
+    <button onclick="addColor()">Add Color</button>
+
+    <script>
+        // Declare the initial array of colors
+        var colors = ["Red", "Green", "Blue"];
+
+        // Function to update the color list on the page
+        function updateColorList() {
+            document.getElementById("colorList").textContent = colors.join(", ");
+        }
+
+        // Function to add a color to the array if not already present
+        function addColor() {
+            var userInput = document.getElementById("colorInput").value;
+            userInput = userInput.trim(); // Remove leading/trailing whitespace
+
+            if (userInput !== "") {
+                if (!colors.includes(userInput)) {
+                    colors.push(userInput);
+                    updateColorList();
+                    alert(userInput + " added to the color list!");
+                } else {
+                    alert(userInput + " is already in the color list.");
+                }
+
+                // Clear the input field
+                document.getElementById("colorInput").value = "";
+            }
+        }
+
+        // Initial update of the color list on page load
+        updateColorList();
+    </script>
+</body>
+</html>
+

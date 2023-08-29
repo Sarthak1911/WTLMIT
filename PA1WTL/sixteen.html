@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Heading Style</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 80px;
+        }
+
+        label {
+            display: block;
+        }
+
+        select {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Change This Heading</h1>
+    <label for="fontColorSelect">Select Font Color:</label>
+    <select id="fontColorSelect">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+    <br>
+    <label for="bgColorSelect">Select Background Color:</label>
+    <select id="bgColorSelect">
+        <option value="white">White</option>
+        <option value="yellow">Yellow</option>
+        <option value="lightblue">Light Blue</option>
+        <option value="lightgreen">Light Green</option>
+    </select>
+    <br>
+    <button onclick="changeHeadingStyle()">Apply Style</button>
+
+    <script>
+        function changeHeadingStyle() {
+            var heading = document.getElementById("heading");
+            var fontColorSelect = document.getElementById("fontColorSelect");
+            var bgColorSelect = document.getElementById("bgColorSelect");
+
+            var selectedFontColor = fontColorSelect.value;
+            var selectedBgColor = bgColorSelect.value;
+
+            // Get the current styles
+            var currentFontColor = getComputedStyle(heading).color;
+            var currentBgColor = getComputedStyle(heading).backgroundColor;
+
+            // Check if the selected styles are different from the current styles
+            if (selectedFontColor !== currentFontColor || selectedBgColor !== currentBgColor) {
+                heading.style.color = selectedFontColor;
+                heading.style.backgroundColor = selectedBgColor;
+            } else {
+                alert("Font color and background color are already the same.");
+            }
+        }
+    </script>
+</body>
+</html>
+

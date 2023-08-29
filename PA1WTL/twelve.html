@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter their name
+        var userName = prompt("Enter your name:");
+
+        // Check if the input is not empty
+        if (userName) {
+            // Create the welcome message
+            var welcomeMessage = "Hello " + userName + " Welcome to MIT ADT University";
+
+            // Display the welcome message
+            document.write("<p>" + welcomeMessage + "</p>");
+        } else {
+            // Display an error message if the input is empty
+            document.write("<p>Please enter a valid name.</p>");
+        }
+    </script>
+</body>
+</html>

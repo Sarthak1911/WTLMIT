@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        input {
+            font-size: 18px;
+            padding: 5px;
+            margin-right: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            font-size: 18px;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Multiplication Table</h2>
+    
+    <label for="rows">Enter number of rows:</label>
+    <input type="number" id="rows" value="5">
+    
+    <label for="columns">Enter number of columns:</label>
+    <input type="number" id="columns" value="5">
+    
+    <button onclick="generateTable()">Generate Table</button>
+    
+    <table id="multiplicationTable"></table>
+
+    <script>
+        function generateTable() {
+            // Get the user input values for rows and columns
+            var rows = parseInt(document.getElementById("rows").value);
+            var columns = parseInt(document.getElementById("columns").value);
+
+            // Reference to the table element
+            var table = document.getElementById("multiplicationTable");
+
+            // Clear the existing table content
+            table.innerHTML = "";
+
+            // Generate the multiplication table
+            for (var i = 1; i <= rows; i++) {
+                var row = document.createElement("tr");
+
+                for (var j = 1; j <= columns; j++) {
+                    var cell = document.createElement("td");
+                    cell.textContent = i * j;
+                    row.appendChild(cell);
+                }
+
+                table.appendChild(row);
+            }
+        }
+
+        // Generate the initial table with default values
+        generateTable();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter an array (comma-separated values)
+        var inputArrayStr = prompt("Enter an array of numbers (comma-separated):");
+
+        // Convert the input string into an array
+        var inputArray = inputArrayStr.split(",").map(function(item) {
+            return parseInt(item.trim());
+        });
+
+        // Check if the input is valid
+        if (isNaN(inputArray[0])) {
+            document.write("<p>Invalid input. Please enter a valid array of numbers.</p>");
+        } else {
+            // Display the entered array
+            document.write("<p>Entered Array: " + inputArray + "</p>");
+
+            // Sort the array in ascending order
+            var sortedArray = inputArray.slice(); // Create a copy of the original array
+            sortedArray.sort(function(a, b) {
+                return a - b;
+            });
+            document.write("<p>Entered Array in Ascending Order: " + sortedArray + "</p>");
+
+            // Push element 25 into the array
+            inputArray.push(25);
+            document.write("<p>Updated Array (after pushing 25): " + inputArray + "</p>");
+
+            // Display the length of the array
+            document.write("<p>Length of the Array: " + inputArray.length + "</p>");
+
+            // Show the element at position 3 (0-based index)
+            if (inputArray.length > 3) {
+                document.write("<p>Element at Position 3: " + inputArray[2] + "</p>");
+            } else {
+                document.write("<p>The array does not have enough elements to display at position 3.</p>");
+            }
+        }
+    </script>
+</body>
+</html>

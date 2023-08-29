@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .coffee-type {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .coffee-type img {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .rate {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="sl1.png" alt="Coffee Mug">
+            Coffee Shop Online
+        </h1>
+    </header>
+
+    <div class="container">
+        <h2>Select Your Coffee Type</h2>
+        <div class="coffee-type">
+            <div class="coffee-option">
+                <img src="Slide1.jpg" alt="Coffee Type 1">
+                <p>Espresso</p>
+            </div>
+            <div class="coffee-option">
+                <img src="Slide3.jpg" alt="Coffee Type 2">
+                <p>Cappuccino</p>
+            </div>
+            <div class="coffee-option">
+                <img src="Slide2.jpg" alt="Coffee Type 3">
+                <p>Americano</p>
+            </div>
+        </div>
+
+        <label for="coffee-type">Select Coffee Type:</label>
+        <select id="coffee-type" name="coffee-type">
+            <option value="espresso">Espresso</option>
+            <option value="cappuccino">Cappuccino</option>
+            <option value="americano">Americano</option>
+        </select>
+
+        <div class="rate">
+            Rate for selected coffee type: $<span id="coffee-rate">2.50</span>
+        </div>
+    </div>
+
+    <script>
+        const coffeeTypeSelect = document.getElementById('coffee-type');
+        const coffeeRateDisplay = document.getElementById('coffee-rate');
+
+        coffeeTypeSelect.addEventListener('change', function () {
+            const selectedCoffeeType = coffeeTypeSelect.value;
+            let rate = 0;
+
+            switch (selectedCoffeeType) {
+                case 'espresso':
+                    rate = 2.50;
+                    break;
+                case 'cappuccino':
+                    rate = 3.00;
+                    break;
+                case 'americano':
+                    rate = 2.75;
+                    break;
+                default:
+                    rate = 0;
+            }
+
+            coffeeRateDisplay.textContent = rate.toFixed(2);
+        });
+    </script>
+</body>
+</html>
+

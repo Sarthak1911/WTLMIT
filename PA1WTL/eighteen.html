@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Link</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+
+        #linkContainer {
+            margin: 0 auto;
+            max-width: 400px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Create Link</h2>
+    <button onclick="createLink()">Create Link</button>
+
+    <div id="linkContainer">
+        <!-- The anchor tag will be appended here -->
+    </div>
+
+    <script>
+        function createLink() {
+            // Create a new anchor element
+            var anchor = document.createElement("a");
+
+            // Set the href attribute to the URL of the new page
+            anchor.href = "https://www.example.com/newpage.html";
+
+            // Set the anchor text
+            anchor.textContent = "Visit New Page";
+
+            // Append the anchor tag to the container
+            document.getElementById("linkContainer").appendChild(anchor);
+        }
+    </script>
+</body>
+</html>
+

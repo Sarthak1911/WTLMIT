@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Palindrome Checker</h2>
+    <button onclick="isPalindrome()">Check Palindrome</button>
+
+    <script>
+        function isPalindrome() {
+            // Prompt the user for input
+            var inputString = prompt("Enter a string:");
+
+            // Remove spaces and convert to lowercase for a case-insensitive check
+            var cleanString = inputString.replace(/ /g, '').toLowerCase();
+
+            // Reverse the string
+            var reversedString = cleanString.split('').reverse().join('');
+
+            // Check if the original and reversed strings are the same
+            if (cleanString === reversedString) {
+                alert("'" + inputString + "' is a palindrome.");
+            } else {
+                alert("'" + inputString + "' is not a palindrome.");
+            }
+        }
+    </script>
+</body>
+</html>
+
